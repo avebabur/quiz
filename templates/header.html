@@ -1,0 +1,12 @@
+<header>
+    <ul>
+        <li><a href="{% url 'questions' %}">Questions</a></li>
+        <li><a href="{% url 'stats' %}">Stats</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'sign out' %}">Sign out</a></li>
+        {% else %}
+        <li><a href="{% url 'sign in' %}">Sign in</a></li>
+        <li><a href="{% url 'sign up' %}">Sign up</a></li>
+        {% endif %}
+    </ul>
+</header>

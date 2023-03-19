@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block scripts %}
+    <script src="{% static 'js/question.js' %}" defer></script>
+{% endblock scripts %}
+
+{% block content %}
+<form id="quiz-form">
+    {% csrf_token %}
+    <div id="quiz-box"></div>
+    <button type="submit">Submit</button>
+</form>
+<div id="score-box"></div>
+<div id="result-box"></div>
+{% endblock content %}
+

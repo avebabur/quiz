@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block scripts %}
+    <script src="{% static 'js/questions.js' %}" defer></script>
+{% endblock scripts %}
+
+{% block content %}
+    {% for question in questions %}
+        <h2>{{question.question}}</h2>
+    {% endfor %}
+    
+    {% if user.is_authenticated %}
+    <button class="start-button">Start?</button>
+    {% else %}
+    <pre> Sign in to start the quiz.<a href="{% url 'sign in' %}">Click here to sign in</a></pre>
+    {% endif %}
+{% endblock %}

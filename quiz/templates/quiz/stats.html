@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="table">
+  <div class="row-header">
+    <div class="col" id="main">User</div>
+    <div class="col" id="main">Overall</div>
+    <div class="col" id="main">Correct</div>
+  </div>
+</div>
+{% for stat in stats %}
+
+<div class="table">
+    <div class="row-header">
+      <div class="col-xd">{{stat.user}}</div>
+      <div class="col-xd">{{stat.overall}}</div>
+      <div class="col-xd">{{stat.correct}}%</div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
